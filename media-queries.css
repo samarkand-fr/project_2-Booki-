@@ -2,18 +2,23 @@
 
 @media all and (min-width: 992px) and(max-width:1400px) {
   #wrapper {
-    width: 992px;
-    margin: auto;
+    max-width: 1400px;
+    width:992px;
   }
 }
 
 /* --------tablette ------ */
 
 @media all and (min-width: 768px) and (max-width: 991px) {
-  .filter_item {
-    padding: 10px 3px;
+  .filter_field{
+    margin-left: -5px;
   }
-
+  .filter_item {
+    padding: 10px 5px 10px 4px;
+  }
+  #family_filter .filter_icon{
+    margin-left: 8px;
+  }
   .main_wrapper {
     flex-wrap: nowrap;
     flex-direction: column;
@@ -23,7 +28,7 @@
   }
   .hosting_title,
   .hosting_bottom {
-    margin-left: 25px;
+    margin-left: 15px;
   }
   .hosting_cards_wrapper {
     gap: 15px;
@@ -60,44 +65,37 @@
 /* -------mobile-------- */
 
 @media all and (min-width: 375px) and (max-width: 767px) {
-  #wrapper {
-    margin: auto;
-  }
+ 
   .header_section {
     width: 100%;
     height: 100%;
     flex-direction: column;
+    padding: 0;
+    margin-bottom:20px;
+  
   }
   .booki_logo {
     margin: auto;
-    padding-bottom: 30px;
   }
   .header_menu {
     width: 100%;
     border-bottom: 1px solid var(--gray);
-    margin-left: -15px;
-    justify-content: center;
-    align-items: center;
+    margin-top: 20px;
   }
-  .menu {
-    padding: 0 15px;
-    margin-right: 15px;
+  .menu{
+    justify-content:space-around;
+    margin-left: -50px;
   }
-
-  .hosting_link::before,
-  .activity_link::before {
-    content: "";
-    display: block;
-    position: relative;
-    width: 0;
-    height: 3px;
-    background-color: var(--blue);
-    transition: background-color 0.5s ease-in-out;
-    transform: translateY(67px);
-  }
-  .hosting_link a:hover,
-  .activity_link a:hover {
-    color: var(--blue);
+   .menu_link::before{
+    transform: translateY(70px);
+  } 
+  /* stretching the line under the link */
+   .menu_link:hover::before{
+    margin-left: -50px;
+    padding: 0 30px; 
+  } 
+  .menu_link:nth-child(2):hover::before{
+    padding: 0 50px; 
   }
   .search_section {
     justify-content: center;
@@ -105,6 +103,7 @@
   }
 
   .search_section h1 {
+    width: 100%;
     margin-top: -5px;
   }
 
@@ -116,7 +115,8 @@
   }
 
   .search_wrapper {
-    width: 100%;
+    width: 95%;
+    margin-left: -10px;
   }
   .search-form {
     width: 100%;
@@ -138,11 +138,8 @@
   .search_button::before {
     font-family: "Font Awesome 5 Free";
     content: "\f002";
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     font-weight: 900;
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .search_button::after {
@@ -165,16 +162,19 @@
     margin-left: -25px;
   }
   .filter_item {
-    padding: 10px 15px 10px 20px;
+    padding: 12px 19px ;
   }
   .filter_item span {
-    font-size: 11px;
+    font-size: 12px;
   }
   #animals_filter .filter_icon {
     margin-right: 2px;
   }
   #family_filter span {
-    padding-right: 45px;
+    padding-right: 55px;
+  }
+  #romantic_filter span{
+    padding-right: 5px;
   }
 
   #animals_filter span {
@@ -187,19 +187,17 @@
     font-size: 16px;
   }
   .filter_icon {
-    font-size: 15px;
+    font-size: 12px;
     align-self: center;
   }
-
-  .info {
-    gap: 10px;
-  }
   .fa-info {
-    font-size: 12px;
+    font-size: smaller;
+    height: 20px;
   }
   .info_text {
-    margin-bottom: 10px;
-    margin-left: -2px;
+    padding:0;
+    margin-left: 10px;
+    margin-bottom: -10px;
   }
 
   .main_wrapper {
@@ -215,11 +213,16 @@
     align-items: center;
     border-radius: 0;
   }
-
   .sponsored_title {
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     justify-items: center;
+  }
+  .sponsored_title h2{
+    margin-left: 10px;
+  }
+  .sponsored_icon{
+    margin-right: 5px;
   }
   .sponsored_card {
     width: 95%;
@@ -249,24 +252,27 @@
     align-items: center;
     background-color: var(--white);
     border-radius: 0;
+    padding: 0;
+    filter:none;
   }
 
   .hosting_title {
     align-self: flex-start;
-    margin-left: -5px;
   }
 
   .hosting_cards_wrapper {
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-
   .hosting_card {
-    width: 90%;
-    height: 40%;
-    margin-bottom: 10px;
-    
+    width: 95%;
+  }
+  /* The aspect ratio of an image is the ratio of its width to its height,
+   to prevent image from growing */
+  .hosting_card img{
+    aspect-ratio: 3 / 1;
   }
  
   .hosting_stars {
@@ -291,11 +297,17 @@
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
+    gap: 20px; 
+    padding: 0;
   }
   .activity_card {
     flex-direction: column;
-    width: 90%;
+    width: 95%;
+    height: 200px;
+    
+  }
+  .activity_card img  {
+     height: 70%;
   }
   .activity_card:hover {
     transform: none;
