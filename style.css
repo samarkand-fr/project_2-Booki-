@@ -6,16 +6,18 @@
   --black: #000000;
 }
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-color: var(--white);
   color: var(--black);
   box-sizing: border-box;
+  -moz-box-sizing: border-box; /* Firefox*/
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
   padding: 0;
   margin: 0;
 }
+
 
 h1 {
   font-weight: 700;
@@ -51,7 +53,8 @@ h3 {
   width: 60px;
   height: 30px;
   align-self: center;
-  margin-top: 10px;
+  margin-top: 25px;
+  object-fit:contain;
 }
 /* navbar  */
 .header_menu {
@@ -74,8 +77,7 @@ a {
   color: black;
 }
 
-.hosting_link::before,
-.activity_link::before {
+.menu_link::before {
   content: "";
   display: block;
   position: relative;
@@ -86,14 +88,16 @@ a {
   background-color: var(--blue);
   transform: translateX(-10px);
 }
-.hosting_link a:hover {
+.menu_link a:hover {
   color: var(--blue);
 }
+
 /* width of line blue */
-.hosting_link:hover::before,
-.activity_link:hover::before {
-  width: 120%;
+.menu_link:hover::before{
+  width: 125%;
+  
 }
+
 /* ---------------search section --------------- */
 .search_section {
   width: 100%;
@@ -113,7 +117,7 @@ a {
 }
 
 .search_wrapper {
-  width: 400px;
+  width: 410px;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -143,14 +147,21 @@ a {
   border: 1px solid #f2f2f2;
   border-left: 0;
   border-right: 0;
-  padding-right: 20px;
+  padding-right: 30px;
+  padding-top: 5px;
 }
 
 .search_input::placeholder {
   font-weight: 700;
   font-size: 18px;
   color: var(--black);
+  
 }
+for 
+ ::-webkit-input-placeholder {  color: var(--black); opacity: 1; }
+ ::-moz-placeholder {  color:var(--black); opacity: 1;}
+ input:-moz-placeholder {  color:var(--black); opacity: 1;} 
+
 .search_button::before {
   content: "Rechercher";
 }
@@ -198,9 +209,15 @@ a {
   gap: 10px;
   margin-left: 25px;
 }
+.filter_icon {
+  color: var(--blue);
+  font-size: 15px;
+  align-self: center;
+  
+}  
+
 #family_filter span {
-  padding-left: 10px;
-  padding-right: 5px;
+  padding: 0 5px 0 10px;
 }
 #animals_filter span {
   margin-left: -5px;
@@ -209,8 +226,7 @@ a {
 @keyframes hover {
   to {
     border: 0;
-    background-color: var(--blue);
-    color: var(--white);
+    background-color: var(--light_blue);
     transform: scale(1.1);
   }
 }
@@ -218,21 +234,13 @@ a {
   animation: hover 1s ease forwards;
 }
 
-.filter_icon {
-  color: var(--blue);
-  font-size: large;
-}
-
-.filter_icon:hover {
-  color: var(--white);
-}
-
 .filter_span {
   font-weight: 700;
   font-size: 17px;
   line-height: 20px;
   margin-right: 5px;
-}
+} 
+
 /* -----------  info section ----------- */
 .info {
   display: flex;
@@ -253,9 +261,12 @@ a {
   border-radius: 55%;
   border: 1px solid #d9d9d9;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content:center;
+  align-items: center ;
   color: var(--blue);
+  font-size: small;
+  
+ 
 }
 /* -------------------------------- main section -------------------------------- */
 .main_wrapper {
@@ -263,6 +274,7 @@ a {
   display: flex;
   justify-content: space-evenly;
   gap: 10px;
+  margin-bottom: 20px;
 }
 /* --------hosting section ------------ */
 .hosting_section {
@@ -274,7 +286,7 @@ a {
   background-color: #d9d9d9;
   border-radius: 15px;
   filter: drop-shadow(0px 3px rgba(0, 0, 0, 0.1));
-  padding: 0px 10px;
+  padding: 10px 8px;
 }
 .hosting_title {
   font-weight: 700;
@@ -319,16 +331,17 @@ a {
   border-radius: 20px 20px 0 0;
 }
 /* ---To stretch the link on top of the card div--- */
-.card-link {
+.card_link {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   width: 100%;
 }
-.hosting_card:hover {
-  transform: scale(1.1);
+.hosting_card:hover, .sponsored_card:hover, .activity_card:hover{
+  transform: scale(1.03);
 }
+
 .hosting_card h2,
 .hosting_card h3 {
   text-align: start;
@@ -364,15 +377,13 @@ a {
   justify-content: center;
   background-color: var(--gray);
   border-radius: 15px;
-  padding: 15px 6px;
+  padding: 20px 6px; 
 }
 .sponsored_title {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 10px;
- 
 }
 .sponsored_cards_wrapper {
   display: flex;
@@ -380,7 +391,8 @@ a {
   justify-content: center;
   align-items: center;
   gap: 25px;
-  margin-bottom: 25px;
+  padding: 5px 5px;
+  margin-bottom: 40px; 
 }
 
 .sponsored_title h2 {
@@ -390,9 +402,9 @@ a {
   font-size: 14px;
 }
 .sponsored_icon {
-  width: 20px;
+ font-size: 18px;
   height: 15px;
-  margin-top: 5px;
+  margin-top: 15px;
   color: var(--blue);
   padding-right: 10px;
 }
@@ -432,9 +444,6 @@ a {
 .sponsored_stars {
  margin-left: -10px;
 }
-.sponsored_card:hover {
-  transform: scale(1.1);
-}
 
 /* -----------activities section-------------- */
 
@@ -442,13 +451,14 @@ a {
   display: flex;
   flex-direction: column;
   border-radius: 15px;
-  padding: 20px 5px;
+  padding: 15px 0px; 
+  margin-bottom: 35px;
 }
 .activities_section h2 {
   font-weight: 700;
   font-size: 22px;
   line-height: 26px;
-  padding-left: 6px;
+  padding: 6px;
 }
 .activity_cards_wrapper {
   display: flex;
@@ -457,7 +467,7 @@ a {
   justify-content: space-evenly;
   gap: 10px;
   flex-wrap: nowrap;
-  padding: 5px 0px 20px 0px;
+  padding: 5px 0px 20px 0px; 
 }
 .activity_card {
   width: 370px;
@@ -478,9 +488,7 @@ a {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.activity_card:hover {
-  transform: scale(1.1);
-}
+
 .activity_card h3 {
   padding-left: 5px;
   font-weight: 700;
