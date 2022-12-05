@@ -1,3 +1,7 @@
+/* "Raleway" font  */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
+
+/* root variables colors */
 :root {
   --blue: #0065fc;
   --light_blue: #deebff;
@@ -5,8 +9,9 @@
   --white: #fff;
   --black: #000000;
 }
+
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   background-color: var(--white);
   color: var(--black);
   box-sizing: border-box;
@@ -17,7 +22,6 @@ body {
   padding: 0;
   margin: 0;
 }
-
 
 h1 {
   font-weight: 700;
@@ -40,6 +44,7 @@ h3 {
   padding: 0 5px;
   margin: auto;
 }
+
 .header_section {
   width: 100%;
   height: 50px;
@@ -54,7 +59,7 @@ h3 {
   height: 30px;
   align-self: center;
   margin-top: 25px;
-  object-fit:contain;
+  object-fit: contain;
 }
 /* navbar  */
 .header_menu {
@@ -93,9 +98,8 @@ a {
 }
 
 /* width of line blue */
-.menu_link:hover::before{
+.menu_link:hover::before {
   width: 125%;
-  
 }
 
 /* ---------------search section --------------- */
@@ -105,7 +109,7 @@ a {
   display: flex;
   flex-direction: column;
   padding: 20px 10px 10px 10px;
-  justify-content:center;
+  justify-content: center;
   align-items: flex-start;
   gap: 10px;
 }
@@ -134,6 +138,7 @@ a {
   align-items: center;
   border-radius: 15px 0 0 15px;
 }
+
 .search-form {
   display: flex;
   justify-content: center;
@@ -151,17 +156,16 @@ a {
   padding-top: 5px;
 }
 
-.search_input::placeholder {
+.search_input::placeholder{
   font-weight: 700;
   font-size: 18px;
   color: var(--black);
-  
 }
-for 
- ::-webkit-input-placeholder {  color: var(--black); opacity: 1; }
- ::-moz-placeholder {  color:var(--black); opacity: 1;}
- input:-moz-placeholder {  color:var(--black); opacity: 1;} 
-
+.search_input:-moz-placeholder,
+.search_input::-moz-placeholder{
+  color: var(--black);
+  opacity: 1;
+}  
 .search_button::before {
   content: "Rechercher";
 }
@@ -213,8 +217,7 @@ for
   color: var(--blue);
   font-size: 15px;
   align-self: center;
-  
-}  
+}
 
 #family_filter span {
   padding: 0 5px 0 10px;
@@ -239,7 +242,7 @@ for
   font-size: 17px;
   line-height: 20px;
   margin-right: 5px;
-} 
+}
 
 /* -----------  info section ----------- */
 .info {
@@ -261,19 +264,17 @@ for
   border-radius: 55%;
   border: 1px solid #d9d9d9;
   display: flex;
-  justify-content:center;
-  align-items: center ;
+  justify-content: center;
+  align-items: center;
   color: var(--blue);
   font-size: small;
-  
- 
 }
 /* -------------------------------- main section -------------------------------- */
 .main_wrapper {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  gap: 10px;
+  gap: 1%;
   margin-bottom: 20px;
 }
 /* --------hosting section ------------ */
@@ -320,7 +321,7 @@ for
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  position: relative;/*needed for the link*/
+  position: relative; /*needed for the link*/
 }
 
 .hosting_card img {
@@ -338,7 +339,9 @@ for
   left: 0;
   width: 100%;
 }
-.hosting_card:hover, .sponsored_card:hover, .activity_card:hover{
+.hosting_card:hover,
+.sponsored_card:hover,
+.activity_card:hover {
   transform: scale(1.03);
 }
 
@@ -377,7 +380,7 @@ for
   justify-content: center;
   background-color: var(--gray);
   border-radius: 15px;
-  padding: 20px 6px; 
+  padding: 20px 6px;
 }
 .sponsored_title {
   width: 100%;
@@ -391,8 +394,7 @@ for
   justify-content: center;
   align-items: center;
   gap: 25px;
-  padding: 5px 5px;
-  margin-bottom: 40px; 
+  margin-bottom: 40px;
 }
 
 .sponsored_title h2 {
@@ -402,14 +404,14 @@ for
   font-size: 14px;
 }
 .sponsored_icon {
- font-size: 18px;
+  font-size: 18px;
   height: 15px;
   margin-top: 15px;
   color: var(--blue);
   padding-right: 10px;
 }
 .sponsored_card {
-  width:270px;
+  width: 270px;
   height: 130px;
   display: flex;
   flex-direction: row;
@@ -422,7 +424,7 @@ for
   position: relative;
 }
 .sponsored_card img {
-  width: 110px;
+  width: 40%;
   height: 100%;
   object-fit: cover;
   border-top: white;
@@ -432,17 +434,17 @@ for
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-left: 15px;
-  margin-top: -10px;
+  margin-top: -5px;
 }
 .sponsored_card_title h3 {
   font-weight: 600;
   font-size: 14px;
-  margin-top: -5px;
+  margin-top: -10px;
 }
 .sponsored_stars {
- margin-left: -10px;
+  margin-left: -10px;
 }
 
 /* -----------activities section-------------- */
@@ -451,7 +453,7 @@ for
   display: flex;
   flex-direction: column;
   border-radius: 15px;
-  padding: 15px 0px; 
+  padding: 15px 0px;
   margin-bottom: 35px;
 }
 .activities_section h2 {
@@ -467,7 +469,7 @@ for
   justify-content: space-evenly;
   gap: 10px;
   flex-wrap: nowrap;
-  padding: 5px 0px 20px 0px; 
+  padding: 5px 0px 20px 0px;
 }
 .activity_card {
   width: 370px;
