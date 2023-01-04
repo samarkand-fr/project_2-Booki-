@@ -18,9 +18,9 @@ body {
   -moz-box-sizing: border-box; /* Firefox*/
   width: 100%;
   height: 100vh;
-  overflow-x: hidden;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -41,7 +41,7 @@ h3 {
 
 #wrapper {
   max-width: 992px;
-  padding: 0 5px;
+  padding: 0 20px; 
   margin: auto;
 }
 
@@ -150,8 +150,9 @@ a {
   width: 220px;
   text-align: center;
   border: 1px solid #f2f2f2;
-  border-left: 0;
+  border-left-color: 0;
   border-right: 0;
+  outline:none;
   padding-right: 30px;
   padding-top: 5px;
 }
@@ -168,7 +169,9 @@ a {
 }  
 .search_button::before {
   content: "Rechercher";
+  
 }
+
 .search_button {
   width: 140px;
   height: 50px;
@@ -293,8 +296,7 @@ a {
   font-weight: 700;
   font-size: 22px;
   align-self: flex-start;
-  padding: 15px 0 5px 0;
-  margin-left: 10px;
+  margin-top: 25px;
 }
 
 .hosting_cards_wrapper {
@@ -305,6 +307,7 @@ a {
   align-items: center;
   gap: 5px;
   border-radius: 20px;
+  padding-top: 5px;
 }
 
 .hosting_card {
@@ -368,12 +371,21 @@ a {
   line-height: 21px;
   flex: content;
   align-self: flex-start;
-  margin-left: 10px;
+  margin-left: 5px;
+  outline: none;
+  border:none;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: var(--gray);
+}
+.hosting_bottom:hover{
+   color:var(--blue);
+   transform: scale(1.1);
 }
 
 /* --------sponsored section-------------- */
 .sponsored_section {
-  width: 30%;
+  width: 29%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -387,6 +399,9 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 25px;
+  
+ 
 }
 .sponsored_cards_wrapper {
   display: flex;
@@ -394,9 +409,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 25px;
-  margin-bottom: 40px;
 }
-
 .sponsored_title h2 {
   font-size: 22px;
 }
@@ -410,9 +423,10 @@ a {
   color: var(--blue);
   padding-right: 10px;
 }
+
 .sponsored_card {
-  width: 270px;
-  height: 130px;
+  width: 280px;
+  height: 140px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -421,7 +435,7 @@ a {
   border-radius: 15px;
   padding: 3px;
   filter: drop-shadow(0 3px rgba(0, 0, 0, 0.1));
-  position: relative;
+  position: relative;/*needed for the link*/
 }
 .sponsored_card img {
   width: 40%;
@@ -435,16 +449,16 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding-left: 15px;
-  margin-top: -5px;
+   padding-left: 15px;
+  margin-top: -5px; 
 }
 .sponsored_card_title h3 {
   font-weight: 600;
   font-size: 14px;
-  margin-top: -10px;
+  margin-top: -10px; 
 }
 .sponsored_stars {
-  margin-left: -10px;
+  margin-left: -10px; 
 }
 
 /* -----------activities section-------------- */
@@ -467,19 +481,19 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  gap: 10px;
+  gap: 20px;
   flex-wrap: nowrap;
   padding: 5px 0px 20px 0px;
 }
 .activity_card {
-  width: 370px;
+  width: 340px;
   height: 350px;
   background-color: var(--white);
   border-radius: 20px;
   box-shadow: 2px 3px 3px 3px #f2f2f2;
   -webkit-box-shadow: 2 3px 5px #f2f2f2;
   -moz-box-shadow: 2 3px 5px #f2f2f2;
-  position: relative;
+  position: relative;/*needed for the link*/
 }
 .activity_card img {
   border-top: white;
@@ -498,15 +512,19 @@ a {
 /* --------footer  --------- */
 .footer_section {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   padding: 10px;
   background-color: #d9d9d9;
-  gap: 50px;
+  
 }
 .footer_section ul {
   list-style-type: none;
   line-height: 30px;
+  flex:1;
+}
+.footer_section li a:hover{
+     color:var(--blue);
 }
 
 .about_title,
