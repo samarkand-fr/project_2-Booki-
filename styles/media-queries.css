@@ -44,6 +44,7 @@
   .main_wrapper {
     flex-wrap: nowrap;
     flex-direction: column;
+    gap:10px;
   }
 
   .hosting_section {
@@ -72,6 +73,7 @@
   .sponsored_cards_wrapper {
     width: 95%;
     flex-direction: row;
+    padding-bottom: 10px;
   }
   .sponsored_stars {
     margin-top: -5px;
@@ -80,7 +82,7 @@
     width: 95%;
   }
   .activity_card img {
-    height: 270px;
+    height: 80%;
   }
 }
 
@@ -145,7 +147,7 @@
   .search_input {
     width: 100%;
   }
-  /* line under input */
+ 
   .search_input::placeholder {
     padding-right: 10px;
   }
@@ -329,6 +331,6 @@
     margin: 15px 0 auto;
   }
   .footer_section ul + ul {
-    margin-top: -35px;
+    margin-top: 25px;
   }
 }
